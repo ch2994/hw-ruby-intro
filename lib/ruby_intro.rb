@@ -2,14 +2,14 @@
 
 # Part 1
 
-def sum arr
+def sum(arr)
   result = 0
   arr.each {|x| result += x}
   return result
   # YOUR CODE HERE
 end
 
-def max_2_sum arr
+def max_2_sum(arr)
   if arr.empty?
     return 0
   elsif arr.length == 1
@@ -72,7 +72,18 @@ def binary_multiple_of_4? s
 end
 
 # Part 3
-
+# class BookInStock
 class BookInStock
-# YOUR CODE HERE
+  attr_accessor :isbn, :price
+
+  def initialize(isbn_num, price_info)
+    raise ArgumentError if isbn_num.empty? || price_info <= 0
+
+    @isbn = isbn_num
+    @price = price_info
+  end
+
+  def price_as_string
+    '$' + ('%.2f' % @price)
+  end
 end
